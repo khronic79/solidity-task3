@@ -14,8 +14,8 @@ const config: HardhatUserConfig = {
   },
   gasReporter: {
     enabled: true,
-    outputFile: 'gas-report.md',
-    noColors: true, // Отключить цвета, если вы хотите отправить отчет в файл.
+    // outputFile: 'gas-report.txt',
+    // noColors: true, // Отключить цвета, если вы хотите отправить отчет в файл.
 },
 };
 

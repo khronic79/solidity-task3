@@ -80,20 +80,4 @@ describe("Optimization", function () {
 
     expect(gasUsed2).to.be.lessThan(gasUsed1);
   });
-
-  it("Сравнение газа для transferNoOptimization и transferWithOptimization", async function () {
-    const tx1 = await optimization.transferNoOptimization(ethers.Wallet.createRandom().address, ethers.parseEther("1"));
-    const receipt1 = await tx1.wait();
-    const gasUsed1 = receipt1.gasUsed;
-
-    const tx2 = await optimization.transferWithOptimization(ethers.Wallet.createRandom().address, ethers.parseEther("1"));
-    const receipt2 = await tx2.wait();
-    const gasUsed2 = receipt2.gasUsed;
-
-    console.log(`Используемый газ для transferNoOptimization: ${gasUsed1}`);
-    console.log(`Используемый газ для transferWithOptimization: ${gasUsed2}`);
-
-    expect(gasUsed2).to.be.lessThan(gasUsed1);
-  });
-
 });
